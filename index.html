@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulir Pendaftaran</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Styling untuk radio button agar tampak seperti button */
+        * {
+            font-size: 16px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-check-input {
+            display: none;
+        }
+
+        .form-check-label {
+            display: block;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .form-check-input:checked+.form-check-label {
+            background-color: white;
+            color: #007bff;
+            border-color: #007bff;
+        }
+
+        .form-check-label:active {
+            transform: scale(0.98);
+        }
+
+        h5 {
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments */
+        .container {
+            max-width: 55%;
+            /* Form hanya 50% dari lebar layar */
+            padding-left: 15px;
+            padding-right: 15px;
+            margin: 0 auto;
+            /* Menjaga agar form tetap terpusat */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+                /* Di perangkat kecil, form akan mengambil 90% lebar layar */
+            }
+
+            .form-check-label {
+                font-size: 14px;
+            }
+
+            .form-select,
+            .form-control {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center fw-bold">Formulir Pendaftaran</h2>
+        <p class="text-center">Khusus Program Bootcamp, setelah kirim formulir kamu akan pindah ke halaman registration
+            fee Rp100rb untuk amankan kursimu sebelum kuota penuh!</p>
+
+        <div class="card p-4 ">
+            <h5 class="fw-bold">Pilih Program yang Ingin Diambil</h5>
+            <div class="row g-3 mb-3 ">
+                <div class="col-12 col-md-6 ">
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="program" id="bootcamp" value="bootcamp"
+                            checked>
+                        <label class="form-check-label text-start" for="bootcamp">
+                            <span class="fw-bold">Bootcamp</span> <br> Program pembelajaran full-time yang di bidang IT
+                            dengan jadwal belajar
+                            intensif.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="program" id="upskilling" value="upskilling">
+                        <label class="form-check-label text-start" for="upskilling">
+                            <span class="fw-bold">Professional Development</span> <br> Program pembelajaran di luar jam
+                            kerja untuk upskilling di
+                            bidang IT
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Pilih Program</label>
+                    <select class="form-select">
+                        <option selected>Select...</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Pilih Lokasi</label>
+                        <select class="form-select">
+                            <option selected>Select...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Pilih Batch</label>
+                        <select class="form-select">
+                            <option selected>Select...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h5>Informasi Data Diri</h5>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Nama Depan Sesuai KTP</label>
+                        <input type="text" class="form-control" placeholder="Nama Depan">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Nama Belakang Sesuai KTP</label>
+                        <input type="text" class="form-control" placeholder="Nama Belakang">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Jenis Kelamin</label>
+                        <select class="form-select">
+                            <option selected>Select...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Tanggal Lahir</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">No HP</label>
+                        <input type="tel" name="usrtel" pattern="^[0-9]{3,45}$" title="You can only enter numbers, with a minimal of 3 characters 
+                        upto 45 characters are accepted." required="required" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Kota Domisili</label>
+                        <select class="form-select">
+                            <option selected>Select...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Kode Pos</label>
+                        <input type="tel" class="form-control" placeholder="Nomor HP Kerabat">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Alamat Lengkap</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Apa motivasi kamu mengikuti program ini?</label>
+                    <select class="form-select">
+                        <option selected>Select...</option>
+                    </select>
+                </div>
+
+                <h4>Metode Pembayaran</h4>
+
+                <h5 class="mt-4 mb-3">Pilih Metode Pembayaran</h5>
+                <div class="row g-3 mb-3" style="font-size: 14px;">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="payment" id="upfrontPayment"
+                                value="upfrontPayment" checked>
+                            <label class="form-check-label" for="upfrontPayment">
+                                Upfront <br> Pelunasan di awal
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="payment" id="installmentPayment"
+                                value="installmentPayment">
+                            <label class="form-check-label" for="installmentPayment">
+                                Cicilan 0% <br> Cicilan tanpa bunga
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="payment" id="snplPayment"
+                                value="snplPayment">
+                            <label class="form-check-label" for="snplPayment">
+                                SNPL <br> Biaya dicicil setelah lulus
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <label class="form-label">Kode Referal</label>
+                <input type="tel" class="form-control mb-3" placeholder="Nomor HP Kerabat">
+
+                <div class="form-check">
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                    Dengan mengirim formulir ini saya menyetujui Syarat dan Ketentuan untuk mengikuti program yang saya
+                    daftarkan.
+                </div>
+
+                <button type="submit" class="btn btn-primary p-3 mt-5 fw-bold">Kirim Formulir</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
